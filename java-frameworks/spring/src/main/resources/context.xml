@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="user1" class="com.danit.lesson1.User">
+        <property name="name" value="Jamshud"/>
+        <property name="age" value="1"/>
+    </bean>
+
+    <bean id="user2" class="com.danit.lesson1.User" scope="prototype">
+        <constructor-arg value="12"/>
+        <constructor-arg value="Ravshan"/>
+        <constructor-arg value="15"/>
+        <constructor-arg value="1"/>
+        <constructor-arg value="Rav"/>
+        <constructor-arg value="rapass"/>
+
+        <property name="child" ref="user1" />
+    </bean>
+
+    <bean id="service" class="com.danit.lesson1.xml.DefaultUserService">
+        <constructor-arg ref="mockDao"/>
+    </bean>
+
+    <bean id="jdbcDao" class="com.danit.lesson1.xml.JdbcUserDao">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="mockDao" class="com.danit.lesson1.xml.MockUserDao">
+        <property name = "users">
+            <list>
+                <value>Foo</value>
+                <value>Bar</value>
+                <value>Baz</value>
+                <value>Zoo</value>
+            </list>
+        </property>
+    </bean>
+
+    <context:property-placeholder location="classpath:application.properties"/>
+
+    <!-- more bean definitions go here -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+</beans>

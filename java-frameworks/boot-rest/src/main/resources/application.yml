@@ -1,0 +1,10 @@
+jdbc:
+  url: jdbc:postgresql://localhost:5433/hr
+  username: postgres
+  password: postgres
+welcome:
+  message: welcome
+server:
+  error:
+    path: /error
+  port: 9000
