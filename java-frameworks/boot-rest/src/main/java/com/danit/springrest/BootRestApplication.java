@@ -17,7 +17,8 @@ public class BootRestApplication implements ApplicationRunner {
         SpringApplication.run(BootRestApplication.class, args);
     }
 
-    @Override public void run(ApplicationArguments args) throws Exception {
+    @Override
+    public void run(ApplicationArguments args) throws Exception {
         System.out.println("http://localhost:9000/swagger-ui/index.html \n");
     }
 
