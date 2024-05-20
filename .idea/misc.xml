@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/java-frameworks/spring/pom.xml" />
         <option value="$PROJECT_DIR$/java-frameworks/boot-rest/pom.xml" />
         <option value="$PROJECT_DIR$/java-frameworks/boot-jdbc/pom.xml" />
+        <option value="$PROJECT_DIR$/java-frameworks/boot-hibernate/pom.xml" />
       </list>
     </option>
   </component>
