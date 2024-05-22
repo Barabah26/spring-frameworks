@@ -38,7 +38,7 @@ import static com.example.bootdata.dao.EmployeeSpecification.employeeLastNameSta
 import static org.modelmapper.config.Configuration.AccessLevel.PRIVATE;
 
 //@EnableJpaAuditing // TODO tests comment
-//@EnableTransactionManagement // TODO tests comment
+@EnableTransactionManagement // TODO tests comment
 @SpringBootApplication
         //@EnableConfigurationProperties(AppProperties.class)
 public class BootDataApplication implements ApplicationRunner {
