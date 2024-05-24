@@ -1,0 +1,32 @@
+---
+spring:
+  profiles:
+    active: memory
+---
+spring:
+  main:
+    banner-mode: off
+  datasource:
+    platform: h2
+  jpa:
+    open-in-view: false
+    defer-datasource-initialization: true
+    properties:
+      generate_statistics: true
+    hibernate.ddl-auto: none
+  config:
+    activate:
+      on-profile: memory
+---
+spring:
+  jpa:
+    open-in-view: false
+    hibernate.ddl-auto: none
+  datasource:
+    own:
+      username: ${CONTAINER.USERNAME}
+      password: ${CONTAINER.PASSWORD}
+      url: ${CONTAINER.URL}
+  config:
+    activate:
+      on-profile: containers
